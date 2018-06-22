@@ -1,0 +1,20 @@
+version: '2'
+
+services:
+  samba:
+    image: samba
+    container_name: samba
+    build: .
+    ports:
+      - "139:139"
+      - "445:445"
+    volumes:
+      - samba-shared:/media/storage
+      - samba-ignored:/media/storage/vega/samba
+volumes:
+  samba-shared:
+    driver_opts:
+      type: none
+      device: /home/clear10/
+      o: bind
+  samba-ignored:
