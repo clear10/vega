@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  samba:
+    image: titpetric/netdata
+    container_name: netdata
+    cap_add:
+      - SYS_PTRACE
+    ports:
+      - "19999:19999"
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
