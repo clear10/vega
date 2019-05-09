@@ -1,7 +1,7 @@
 version: '2'
 
 services:
-  samba:
+  netdata:
     image: titpetric/netdata
     container_name: netdata
     cap_add:
